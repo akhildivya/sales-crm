@@ -4,6 +4,7 @@ import Reports from './Reports'
 import { Route, Routes } from 'react-router-dom'
 import Signup from './Signup'
 import Login from './Login'
+import Charts from './Charts'
 function Sidebar() {
     return (
         <div>
@@ -16,7 +17,9 @@ function Sidebar() {
                         <Nav.Link href="/login">🏠 Dashboard</Nav.Link>
                         <Nav.Link href="#users">👥 Add Users</Nav.Link>
                         <Nav.Link href="#settings">⚙️ Settings</Nav.Link>
+                        
                         <Nav.Link href="/reports">📊 Reports</Nav.Link>
+                        <Nav.Link href="/charts">📊 Charts</Nav.Link>
                     </Nav>
                 </Col>
                 {/* Main Content */}
@@ -27,6 +30,7 @@ function Sidebar() {
                             <Route path="/reports" element={<Reports></Reports>}></Route>
                             <Route path='/Signup'element={<Signup></Signup>}></Route>
                             <Route path='/login' element={<Login></Login>}></Route>
+                            <Route path='/charts' element={<Charts></Charts>}></Route>
                         </Routes>
                     </Row>
                 </Col>
