@@ -7,11 +7,11 @@ ChartJS.register(CategoryScale, LinearScale, PointElement, LineElement, Title, T
 
 const LineChartExample = () => {
   const data = {
-    labels: ['January', 'February', 'March', 'April', 'May', 'June'],
+    labels: ['SA1', 'SA2', 'SA3', 'SA4'],
     datasets: [
       {
         label: 'Monthly Sales',
-        data: [65, 59, 80, 81, 56, 55],
+        data: [50000, 100000, 200000, 300000, 400000, 500000],
         fill: false,
         borderColor: 'rgba(75,192,192,1)',
         tension: 0.1,
