@@ -1,43 +1,48 @@
-import React from 'react'
-import { Col, Container, Row,Nav,Card } from 'react-bootstrap'
+
+import { Col,  Row, Nav} from 'react-bootstrap'
 import Reports from './Reports'
 import { Route, Routes } from 'react-router-dom'
 import Signup from './Signup'
 import Login from './Login'
 import Charts from './Charts'
 import Excelsheet from './Excelsheet'
+import Mainboard from './Mainboard'
 function Sidebar() {
     return (
         <div>
 
             <Row>
                 {/* Sidebar / Aside */}
-                <Col md={2}  className="bg-light vh-100 p-3">
-                    <h5 className="mb-4">Menu</h5>
+                <Col md={2} className="aside-custom vh-100 p-3">
+
+                    <h6 className="text-center mb-4">
+                        Admin</h6>
+
                     <Nav defaultActiveKey="#dashboard" className="flex-column">
-                        <Nav.Link href="/login">🏠 Dashboard</Nav.Link>
-                        <Nav.Link href="/leads">👥 Assign Leads</Nav.Link>
-                        <Nav.Link href="#settings">⚙️ Settings</Nav.Link>
-                        
-                        <Nav.Link href="/reports">📊 Reports</Nav.Link>
+                        <Nav.Link href="/dashboard">🏠 Dashboard</Nav.Link>
+                        <Nav.Link href="/uploadsheet">👥 Upload Sheet</Nav.Link>
+                        <Nav.Link href="#ghh" >📊 Assign Leads</Nav.Link>
+                        <Nav.Link href="/reports" >📊 Reports</Nav.Link>
                         <Nav.Link href="/charts">📊 Charts</Nav.Link>
-                       
+
                     </Nav>
                 </Col>
                 {/* Main Content */}
-                <Col md={10}  className="p-4">
-                    <h3>Welcome to Dashboard</h3>
+                <Col md={10} className="main-content p-4">
+
                     <Row>
                         <Routes>
+
+                            <Route path='/dashboard' element={<Mainboard></Mainboard>}></Route>
                             <Route path="/reports" element={<Reports></Reports>}></Route>
-                            <Route path='/Signup'element={<Signup></Signup>}></Route>
+                            <Route path='/Signup' element={<Signup></Signup>}></Route>
                             <Route path='/login' element={<Login></Login>}></Route>
                             <Route path='/charts' element={<Charts></Charts>}></Route>
-                            <Route path='/leads' element={<Excelsheet></Excelsheet>}></Route>
+                            <Route path='/uploadsheet' element={<Excelsheet></Excelsheet>}></Route>
                         </Routes>
                     </Row>
                 </Col>
-           
+
             </Row>
 
         </div>

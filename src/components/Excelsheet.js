@@ -1,45 +1,99 @@
-import React, { useState } from 'react';
+import React from 'react'
+import { useState } from "react";
 import * as XLSX from 'xlsx';
 
-export default function Excelsheet() {
-  const [rows, setRows] = useState([]);
-  const [cols, setCols] = useState([]);
+function Excelsheet() {
+  // onchange states
+  const [excelFile, setExcelFile] = useState(null);
+  const [typeError, setTypeError] = useState(null);
 
+  // submit state
+  const [excelData, setExcelData] = useState(null);
+
+  // onchange event
   const handleFile = (e) => {
-    const file = e.target.files[0];
-    const reader = new FileReader();
+    let fileTypes = ['application/vnd.ms-excel', 'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet', 'text/csv'];
+    let selectedFile = e.target.files[0];
+    if (selectedFile) {
+      if (selectedFile && fileTypes.includes(selectedFile.type)) {
+        setTypeError(null);
+        let reader = new FileReader();
+        reader.readAsArrayBuffer(selectedFile);
+        reader.onload = (e) => {
+          setExcelFile(e.target.result);
+        }
+      }
+      else {
+        setTypeError('Please select only excel file types');
+        setExcelFile(null);
+      }
+    }
+    else {
+      console.log('Please select your file');
+    }
+  }
 
-    reader.onload = (evt) => {
-      const data = evt.target.result;
-      const wb = XLSX.read(data, { type: 'binary' });
-      const ws = wb.Sheets[wb.SheetNames[0]];
-      const json = XLSX.utils.sheet_to_json(ws, { header: 1 });
-      setCols(json[0] || []);
-      setRows(json.slice(1));
-    };
-
-    reader.readAsBinaryString(file);
-  };
-
+  // submit event
+  const handleFileSubmit = (e) => {
+    e.preventDefault();
+    if (excelFile !== null) {
+      const workbook = XLSX.read(excelFile, { type: 'buffer' });
+      const worksheetName = workbook.SheetNames[0];
+      const worksheet = workbook.Sheets[worksheetName];
+      const data = XLSX.utils.sheet_to_json(worksheet);
+      setExcelData(data.slice(0, 10));
+    }
+  }
   return (
     <div>
-      <input type="file" accept=".xlsx,.xls" onChange={handleFile} />
-      {rows.length > 0 && (
-        <table border="1" cellPadding="5">
-          <thead>
-            <tr>
-              {cols.map((c, i) => <th key={i}>{c}</th>)}
-            </tr>
-          </thead>
-          <tbody>
-            {rows.map((r, i) => (
-              <tr key={i}>
-                {r.map((cell, j) => <td key={j}>{cell}</td>)}
-              </tr>
-            ))}
-          </tbody>
-        </table>
-      )}
+      <div className="wrapper">
+
+        <h5><b>Upload & View Excel Sheets</b></h5>
+
+        {/* form */}
+        <form className="form-group custom-form" onSubmit={handleFileSubmit}>
+          <input type="file" className="form-control" required onChange={handleFile} />
+          <button type="submit" className=" mt-3 btn btn-success btn-md">upload</button>
+          {typeError && (
+            <div className="alert alert-danger" role="alert">{typeError}</div>
+          )}
+        </form>
+
+        {/* view data */}
+        <div className="viewer">
+          {excelData ? (
+            <div className="table-responsive">
+              <table className="table">
+
+                <thead>
+                  <tr>
+                    {Object.keys(excelData[0]).map((key) => (
+                      <th key={key}>{key}</th>
+                    ))}
+                  </tr>
+                </thead>
+
+                <tbody>
+                  {excelData.map((individualExcelData, index) => (
+                    <tr key={index}>
+                      {Object.keys(individualExcelData).map((key) => (
+                        <td key={key}>{individualExcelData[key]}</td>
+                      ))}
+                    </tr>
+                  ))}
+                </tbody>
+
+              </table>
+            </div>
+          ) : (
+            <div><p className='text-danger'>No File is uploaded yet!</p></div>
+          )}
+        </div>
+
+      </div>
+
     </div>
-  );
+  )
 }
+
+export default Excelsheet

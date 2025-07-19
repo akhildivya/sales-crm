@@ -2,8 +2,8 @@
 function Footer() {
     return (
         <div>
-            <footer className="bg-danger text-light text-center py-3">
-                &copy; {new Date().getFullYear()} CRM Dashboard. All rights reserved.
+            <footer className="footer-custom  text-center py-3">
+                <b>&copy; {new Date().getFullYear()} CRM Dashboard. All rights reserved.</b>
             </footer>
         </div>
     )
