@@ -1,15 +1,20 @@
 
-import { Col,  Row, Nav} from 'react-bootstrap'
-import Reports from './Reports'
+import { Col, Row, Nav } from 'react-bootstrap'
+
 import { Route, Routes } from 'react-router-dom'
-import Signup from './Signup'
-import Login from './Login'
 import Charts from './Charts'
+import Reports from './Reports'
 import Excelsheet from './Excelsheet'
 import Mainboard from './Mainboard'
+
+import Login from '../pages/Login'
+import Signup from '../pages/Signup'
+
 function Sidebar() {
     return (
+
         <div>
+
 
             <Row>
                 {/* Sidebar / Aside */}
@@ -35,8 +40,8 @@ function Sidebar() {
 
                             <Route path='/dashboard' element={<Mainboard></Mainboard>}></Route>
                             <Route path="/reports" element={<Reports></Reports>}></Route>
-                            <Route path='/Signup' element={<Signup></Signup>}></Route>
                             <Route path='/login' element={<Login></Login>}></Route>
+                            <Route path='/signup' element={<Signup></Signup>}></Route>
                             <Route path='/charts' element={<Charts></Charts>}></Route>
                             <Route path='/uploadsheet' element={<Excelsheet></Excelsheet>}></Route>
                         </Routes>
@@ -44,7 +49,7 @@ function Sidebar() {
                 </Col>
 
             </Row>
-
+            
         </div>
     )
 }

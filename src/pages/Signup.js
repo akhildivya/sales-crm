@@ -6,8 +6,6 @@ function Signup() {
         <div className="signup-page">
             <form className="signup-card" >
                 <h2>Create Account</h2>
-
-                
                 <input name="username" placeholder="username" required />
                 <input type="email" name="email" placeholder="email" required />
                 <input type="password" name="password" placeholder="password" required />

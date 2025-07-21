@@ -18,7 +18,8 @@ doc.save('table.pdf')
           <tr>
             <th>#</th>
             <th>Sales Agent</th>
-            <th>Contact Number</th>
+            <th>Date</th>
+            <th>No of times logged in</th>
             <th>Contacted Numbers</th>
 
           </tr>
