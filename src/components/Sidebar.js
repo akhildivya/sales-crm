@@ -9,6 +9,11 @@ import Mainboard from './Mainboard'
 
 import Login from '../pages/Login'
 import Signup from '../pages/Signup'
+import ProtectedRoute from '../context/ProtectedRoute'
+import Assignleads from './Assignleads'
+import Salesboard from './Salesboard'
+
+
 
 function Sidebar() {
     return (
@@ -26,9 +31,10 @@ function Sidebar() {
                     <Nav defaultActiveKey="#dashboard" className="flex-column">
                         <Nav.Link href="/dashboard">🏠 Dashboard</Nav.Link>
                         <Nav.Link href="/uploadsheet">👥 Upload Sheet</Nav.Link>
-                        <Nav.Link href="#ghh" >📊 Assign Leads</Nav.Link>
+                        <Nav.Link href="/assignleads">📊 Assign Leads</Nav.Link>
                         <Nav.Link href="/reports" >📊 Reports</Nav.Link>
                         <Nav.Link href="/charts">📊 Charts</Nav.Link>
+                        <Nav.Link href="/sales">📊 Sales Dashview</Nav.Link>
 
                     </Nav>
                 </Col>
@@ -44,12 +50,15 @@ function Sidebar() {
                             <Route path='/signup' element={<Signup></Signup>}></Route>
                             <Route path='/charts' element={<Charts></Charts>}></Route>
                             <Route path='/uploadsheet' element={<Excelsheet></Excelsheet>}></Route>
+                            <Route path='/assignleads' element={<Assignleads></Assignleads>}></Route>
+                            <Route path='/sales' element={<Salesboard></Salesboard>}></Route>
+                            
                         </Routes>
                     </Row>
                 </Col>
 
             </Row>
-            
+
         </div>
     )
 }

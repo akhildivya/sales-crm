@@ -1,6 +1,7 @@
 
-import React from 'react'
+import { Link } from "react-router-dom"
 import "../css/signup.css"
+
 function Signup() {
     return (
         <div className="signup-page">
@@ -11,7 +12,12 @@ function Signup() {
                 <input type="password" name="password" placeholder="password" required />
                 <input type="password" name="confirm" placeholder="confirm password" required />
                 <button type="submit">Sign Up</button>
+                <p className='mt-1 '>Already have account? <Link to={'/login'} style={{ textDecoration: 'none' }}>Login</Link></p>
             </form>
+            
+                
+
+          
         </div>
     )
 }
