@@ -24,15 +24,19 @@ function Markstatus() {
                     <Modal.Title>Mark </Modal.Title>
                 </Modal.Header>
                 <Modal.Body>
-                    <FloatingLabel controlId="floatingPassword" label="Call type">
-                        <Form.Control type="password" placeholder="Call type" />
-                    </FloatingLabel>
+                    
 
-                    <DropdownButton id="dropdown-item-button" title="Dropdown button">
-                        <Dropdown.ItemText>Dropdown item text</Dropdown.ItemText>
-                        <Dropdown.Item as="button">Action</Dropdown.Item>
-                        <Dropdown.Item as="button">Another action</Dropdown.Item>
-                        <Dropdown.Item as="button">Something else</Dropdown.Item>
+                    <DropdownButton id="dropdown-item-button" title="Call Status">
+                     
+                        <Dropdown.Item as="button">Missed Call</Dropdown.Item>
+                        <Dropdown.Item as="button">Rejected</Dropdown.Item>
+                        
+                    </DropdownButton>
+                    <DropdownButton id="dropdown-item-button" title="Status">
+                     
+                        <Dropdown.Item as="button">Plan to join</Dropdown.Item>
+                        <Dropdown.Item as="button">Not interested</Dropdown.Item>
+                        
                     </DropdownButton>
 
 
