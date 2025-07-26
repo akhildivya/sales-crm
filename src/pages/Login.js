@@ -1,14 +1,14 @@
 
 
+import Sidebar from "../components/Sidebar";
+import View from "../components/View";
 import "../css/signup.css"
 import { Link, useNavigate } from 'react-router-dom'
-
-
 
 function Login() {
  const navigate = useNavigate();
  const handleLogin=()=>{
-  navigate('/sidebar');
+   navigate('/', { replace: true });
  }
  
   return (

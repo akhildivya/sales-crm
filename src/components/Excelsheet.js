@@ -46,7 +46,7 @@ function Excelsheet() {
   }
   return (
     <div>
-      <div className="wrapper">
+      <div className="wrapper" style={{ marginLeft: '250px', padding: '40px', transition: 'margin-left .5s' }}>
 
         <h5><b>Upload & View Excel Sheets</b></h5>
 

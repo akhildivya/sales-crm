@@ -5,7 +5,7 @@ import Modall from './Modall';
 function Assignleads() {
 
     return (
-        <div>
+        <div className="wrapper" >
             <Table striped bordered hover size="sm">
                 <thead>
                     <tr>
