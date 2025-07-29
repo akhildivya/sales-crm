@@ -4,11 +4,9 @@ import { applyPlugin } from 'jspdf-autotable'
 applyPlugin(jsPDF)
 function Reports() {
   const handelGenerate = () => {
-    
-
-const doc = new jsPDF()
-doc.autoTable({ html: '#my-table' })
-doc.save('table.pdf')
+    const doc = new jsPDF()
+    doc.autoTable({ html: '#my-table' })
+    doc.save('table.pdf')
   }
   return (
 

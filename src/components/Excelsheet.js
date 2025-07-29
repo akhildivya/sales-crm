@@ -45,10 +45,10 @@ function Excelsheet() {
     }
   }
   return (
-    <div>
-      <div className="wrapper" style={{ marginLeft: '250px', padding: '40px', transition: 'margin-left .5s' }}>
+    <div className="shadow-basic container-fluid w-75 " style={{backgroundColor:'orange'}}>
+      
 
-        <h5><b>Upload & View Excel Sheets</b></h5>
+        <div><h5 className='text-center mt-5'><b>Upload & View Excel Sheets</b></h5></div>
 
         {/* form */}
         <form className="form-group custom-form" onSubmit={handleFileSubmit}>
@@ -89,11 +89,11 @@ function Excelsheet() {
             <div><p className='text-danger'>No File is uploaded yet!</p></div>
           )}
         </div>
-
+<button>Submit</button>
       </div>
 
-<button>Submit</button>
-    </div>
+
+    
   )
 }
 

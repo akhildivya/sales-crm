@@ -3,7 +3,7 @@ import { Row, Col, Card } from 'react-bootstrap';
 
 function Mainboard() {
   return (
-    <div>
+    <div className='container-fluid w-75' style={{backgroundColor:'green'}}>
         <Row>
           <h4><b>Dashboard</b></h4>
                         <Col md={4}>
