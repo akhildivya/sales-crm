@@ -45,55 +45,57 @@ function Excelsheet() {
     }
   }
   return (
-    <div className="shadow-basic container-fluid w-75 " style={{backgroundColor:'orange'}}>
-      
+    <div className="shadow-basic container-fluid w-75  " >
 
-        <div><h5 className='text-center mt-5'><b>Upload & View Excel Sheets</b></h5></div>
 
-        {/* form */}
-        <form className="form-group custom-form" onSubmit={handleFileSubmit}>
-          <input type="file" className="form-control" required onChange={handleFile} />
-          <button type="submit" className=" mt-3 btn btn-success btn-md">upload</button>
-          {typeError && (
-            <div className="alert alert-danger" role="alert">{typeError}</div>
-          )}
-        </form>
-
-        {/* view data */}
-        <div className="viewer">
-          {excelData ? (
-            <div className="table-responsive">
-              <table className="table">
-
-                <thead>
-                  <tr>
-                    {Object.keys(excelData[0]).map((key) => (
-                      <th key={key}>{key}</th>
-                    ))}
-                  </tr>
-                </thead>
-
-                <tbody>
-                  {excelData.map((individualExcelData, index) => (
-                    <tr key={index}>
-                      {Object.keys(individualExcelData).map((key) => (
-                        <td key={key}>{individualExcelData[key]}</td>
-                      ))}
-                    </tr>
-                  ))}
-                </tbody>
-
-              </table>
-            </div>
-          ) : (
-            <div><p className='text-danger'>No File is uploaded yet!</p></div>
-          )}
-        </div>
-<button>Submit</button>
+      <div className='text-center'>
+        <h5 ><b>Upload & View Excel Sheets</b></h5>
       </div>
 
+      {/* form */}
+      <form className="form-group custom-form" onSubmit={handleFileSubmit}>
+        <input type="file" className="form-control" required onChange={handleFile} />
+        <button type="submit" className=" mt-3 btn btn-success btn-md">upload</button>
+        {typeError && (
+          <div className="alert alert-danger" role="alert">{typeError}</div>
+        )}
+      </form>
 
-    
+      {/* view data */}
+      <div className="viewer">
+        {excelData ? (
+          <div className="table-responsive">
+            <table className="table">
+
+              <thead>
+                <tr>
+                  {Object.keys(excelData[0]).map((key) => (
+                    <th key={key}>{key}</th>
+                  ))}
+                </tr>
+              </thead>
+
+              <tbody>
+                {excelData.map((individualExcelData, index) => (
+                  <tr key={index}>
+                    {Object.keys(individualExcelData).map((key) => (
+                      <td key={key}>{individualExcelData[key]}</td>
+                    ))}
+                  </tr>
+                ))}
+              </tbody>
+
+            </table>
+          </div>
+        ) : (
+          <div><p className='text-danger'>No File is uploaded yet!</p></div>
+        )}
+      </div>
+      <button>Submit</button>
+    </div>
+
+
+
   )
 }
 

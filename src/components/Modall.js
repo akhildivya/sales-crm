@@ -16,15 +16,15 @@ function Modall() {
 
             <Modal show={show} onHide={handleClose}>
                 <Modal.Header closeButton>
-                    <Modal.Title>Modal heading</Modal.Title>
+                    <Modal.Title>Choose Username</Modal.Title>
                 </Modal.Header>
                 <Modal.Body>
                     <ListGroup>
-                        <ListGroup.Item>Sales Agent 1</ListGroup.Item>
-                        <ListGroup.Item>Sales Agent 2</ListGroup.Item>
-                        <ListGroup.Item>Sales Agent 3</ListGroup.Item>
-                        <ListGroup.Item>Sales Agent 4</ListGroup.Item>
-                        <ListGroup.Item>Sales Agent 5</ListGroup.Item>
+                        <ListGroup.Item>Anu</ListGroup.Item>
+                        <ListGroup.Item>Manu</ListGroup.Item>
+                        <ListGroup.Item>Vijay</ListGroup.Item>
+                        <ListGroup.Item>Praveen</ListGroup.Item>
+                        <ListGroup.Item>Jayesh</ListGroup.Item>
                     </ListGroup>
                 </Modal.Body>
                 <Modal.Footer>

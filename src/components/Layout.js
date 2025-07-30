@@ -6,12 +6,12 @@ export default function Layout() {
   return (
     <div className="layout ">
       <Header />
-      <div className="main-content cotainer w-100 vh-100" style={{backgroundColor:'red', overflow: 'hidden'}} >
+      <div className="main-content cotainer w-100 vh-100"  >
 
         <Outlet />
-       
+
       </div>
-       <Footer></Footer>
+      <Footer></Footer>
     </div>
   );
 }

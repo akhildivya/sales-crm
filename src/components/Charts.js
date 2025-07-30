@@ -7,11 +7,11 @@ ChartJS.register(CategoryScale, LinearScale, PointElement, LineElement, Title, T
 
 const LineChartExample = () => {
   const data = {
-    labels: ['SA1', 'SA2', 'SA3', 'SA4'],
+    labels: ['Anu', 'Manu', 'Vinu', 'Rajesh','Priya'],
     datasets: [
       {
-        label: 'Monthly Sales',
-        data: [50000, 100000, 200000, 300000, 400000, 500000],
+        label: 'Time',
+        data: [100, 150, 200, 250, 300, 350],
         fill: false,
         borderColor: 'rgba(75,192,192,1)',
         tension: 0.1,
@@ -34,7 +34,7 @@ const LineChartExample = () => {
 
   return (
     <div>
-      <h2>Line Chart Example</h2>
+      <h2 className='text-center'>Chart</h2>
       <Line data={data} options={options} />
     </div>
   );
