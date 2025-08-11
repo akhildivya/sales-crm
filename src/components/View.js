@@ -4,7 +4,7 @@ function View() {
   return (
     <div className="homepage-container">
       <div className="text-section"  >
-        <h1 className='text-center mt-5' >The Smart Simple <br /> Online CRM</h1>
+        <h1 className='text-center mt-5' style={{color:'orange'}}>The Smart Simple <br /> Online CRM</h1>
         <p className='text-center' >
           <b>Build stronger customer relationships, make more sales and save time.</b>
         </p>

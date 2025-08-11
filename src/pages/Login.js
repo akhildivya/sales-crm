@@ -11,7 +11,7 @@ function Login() {
   return (
     <div className="signup-page">
       <form className="signup-card" >
-        <h2>Login</h2>
+        <h2 style={{color:'orange'}}>Login</h2>
         <input type="email" name="email" placeholder="email" required />
         <input type="password" name="password" placeholder="password" required />
         <button type="submit" onClick={handleLogin} >Login</button>

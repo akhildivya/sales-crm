@@ -20,11 +20,36 @@ function Modall() {
                 </Modal.Header>
                 <Modal.Body>
                     <ListGroup>
-                        <ListGroup.Item>Anu</ListGroup.Item>
-                        <ListGroup.Item>Manu</ListGroup.Item>
-                        <ListGroup.Item>Vijay</ListGroup.Item>
-                        <ListGroup.Item>Praveen</ListGroup.Item>
-                        <ListGroup.Item>Jayesh</ListGroup.Item>
+                        <ListGroup.Item>
+                            <input className="form-check-input" type="checkbox" value="" id="flexCheckDefault" />
+                                <label className="form-check-label ms-1" for="flexCheckDefault">
+                                   Anu
+                                </label>
+                        </ListGroup.Item>
+                        <ListGroup.Item>
+                             <input className="form-check-input" type="checkbox" value="" id="flexCheckDefault" />
+                                <label className="form-check-label ms-1" for="flexCheckDefault">
+                                   Manu
+                                </label>
+                        </ListGroup.Item>
+                        <ListGroup.Item>
+                            <input className="form-check-input" type="checkbox" value="" id="flexCheckDefault" />
+                                <label className="form-check-label ms-1" for="flexCheckDefault">
+                                   Vijay
+                                </label>
+                        </ListGroup.Item>
+                        <ListGroup.Item>
+                            <input className="form-check-input" type="checkbox" value="" id="flexCheckDefault" />
+                                <label className="form-check-label ms-1" for="flexCheckDefault">
+                                   Thanu
+                                </label>
+                        </ListGroup.Item>
+                        <ListGroup.Item>
+                            <input className="form-check-input" type="checkbox" value="" id="flexCheckDefault" />
+                                <label className="form-check-label ms-1" for="flexCheckDefault">
+                                   Viju
+                                </label>
+                        </ListGroup.Item>
                     </ListGroup>
                 </Modal.Body>
                 <Modal.Footer>

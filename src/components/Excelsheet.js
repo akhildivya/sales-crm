@@ -1,5 +1,6 @@
 import React from 'react'
 import { useState } from "react";
+import { Button } from 'react-bootstrap';
 import * as XLSX from 'xlsx';
 
 function Excelsheet() {
@@ -91,7 +92,8 @@ function Excelsheet() {
           <div><p className='text-danger'>No File is uploaded yet!</p></div>
         )}
       </div>
-      <button>Submit</button>
+      <input type="date" placeholder='Date' name="" id="" />
+      <Button className='m-1'>Submit</Button>
     </div>
 
 

@@ -21,7 +21,7 @@ function Reports() {
             <th>#</th>
             <th>Sales Agent</th>
             <th>Date</th>
-            <th>Working time</th>
+            <th>Total Working time</th>
             <th>Contacted Numbers</th>
 
           </tr>
@@ -32,7 +32,7 @@ function Reports() {
             <td>Mark</td>
             <td>12-June-2025</td>
             <td>120s</td>
-            <td>80256566,986222200,</td>
+            <td>80256566 (M),986222200 (A),</td>
           </tr>
           <tr>
             <td>2</td>
